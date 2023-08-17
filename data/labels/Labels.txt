@@ -1,0 +1,1 @@
+Store your binary training/validation/testing data (i.e. .csv) in this directory. NOTE: The scripts allow for selection of label files in a dialog box.

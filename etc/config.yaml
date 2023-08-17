@@ -1,0 +1,16 @@
+data:
+  image_resize: [64, 64]
+  validation_split: 0.2
+
+training:
+  batch_size: 32
+  epochs: 10
+
+model:
+  base_model: "VGG16"  # Options: "VGG16", "ResNet50",
+  dense_units: 128
+  dropout_rate: 0.5
+
+optimizer:
+  type: "adam"
+  learning_rate: 0.001

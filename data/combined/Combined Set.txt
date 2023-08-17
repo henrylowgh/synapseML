@@ -1,0 +1,1 @@
+Store your combined data in this directory. NOTE: The scripts can be configured to automatically split data into training and validation sets.
