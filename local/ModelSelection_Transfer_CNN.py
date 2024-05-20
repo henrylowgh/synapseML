@@ -97,8 +97,7 @@ X = load_images_from_directory()
 # If images are not 64x64, resize
 X = np.array([np.array(Image.fromarray((img*255).astype(np.uint8)).resize((64, 64))) for img in X])
 
-# y contains labels (0 for no synapse, 1 for synapse)
-y = load_labels_from_file()
+y = load_labels_from_file() # y contains labels (0 for no synapse, 1 for synapse)
 
 # Split data into training and validation sets (80-20 split)
 split_idx = int(0.8 * X.shape[0])
