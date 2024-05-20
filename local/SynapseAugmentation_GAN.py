@@ -10,11 +10,9 @@ import tkinter as tk
 from tkinter import filedialog
 
 def load_images_from_directory():
-    # Create main window and hide it
     root = tk.Tk()
     root.withdraw()
 
-    # Open the file dialog
     directory = filedialog.askdirectory(title="Select directory containing synapse images")
     
     if not directory:
@@ -79,14 +77,13 @@ def train_gan(epochs, batch_size, save_interval):
     # If images aren't 64x64, resize them:
     X_train = np.array([np.array(Image.fromarray((img*255).astype(np.uint8)).resize((64, 64))) for img in X_train])
 
-    # Add channel dimension
-    X_train = np.expand_dims(X_train, axis=-1)
+    X_train = np.expand_dims(X_train, axis=-1)# Add channel dimension
     
     valid_labels = np.ones((batch_size, 1))
     fake_labels = np.zeros((batch_size, 1))
     
-    for epoch in range(epochs):
-        # Train Discriminator
+    
+    for epoch in range(epochs): # Train Discriminator
         idx = np.random.randint(0, X_train.shape[0], batch_size)
         real_imgs = X_train[idx]
         noise = np.random.normal(0, 1, (batch_size, latent_dim))
